@@ -11,7 +11,9 @@ import { ProductsShowPage } from "./ProductsShowPage";
 import { CartedProductsPage } from "./CartedProductsPage";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://mini-capstone-api-amst.onrender.com";
+
 axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
